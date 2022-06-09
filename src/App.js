@@ -1,4 +1,4 @@
-import React from "react";
+import React,{useState} from "react";
 import "./App.css";
 
 function App() {
@@ -12,8 +12,10 @@ function App() {
 }
 
 function FuncComp(props) {
+  var numberState = useState();
+  console.log('numberState'= numberState)
   return (
-    <div className="container">
+    <div className = "container">
       <h2>function style component</h2>
       <p>Number : {props.initNumber}</p>
     </div>
