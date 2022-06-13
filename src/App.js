@@ -12,12 +12,21 @@ function App() {
 }
 
 function FuncComp(props) {
-  var numberState = useState();
+  var numberState = useState(props.initNumber);
+  var number = numberState[0];
+  var setNumber = numberState[1];
   console.log("numberState", numberState);
   return (
     <div className="container">
       <h2>function style component</h2>
-      <p>Number : {props.initNumber}</p>
+      <p>Number : {number}</p>
+      <input
+        type="button"
+        value="random"
+        onClick={function () {
+          setNumber(Math.random());
+        }}
+      ></input>
     </div>
   );
 }
@@ -25,6 +34,7 @@ function FuncComp(props) {
 class ClassComp extends React.Component {
   state = {
     number: this.props.initNumber,
+    date: new Date().toString(),
   };
   render() {
     return (
