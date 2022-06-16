@@ -16,9 +16,11 @@ function FuncComp(props) {
   var number = numberState[0];
   var setNumber = numberState[1];
 
-  var dateState = useState(new Date().toString());
-  var _date = dateState[0];
-  var setDate = dateState[1];
+  // var dateState = useState(new Date().toString());
+  // var _date = dateState[0];
+  // var setDate = dateState[1];
+
+  var [_date, setDate] = useState(new Date().toString());
 
   console.log("numberState", numberState);
   return (
