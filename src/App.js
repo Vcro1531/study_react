@@ -11,6 +11,8 @@ function App() {
   );
 }
 
+var funcStyle = "color:blue";
+var funcId = 0;
 function FuncComp(props) {
   var numberState = useState(props.initNumber);
   var number = numberState[0];
@@ -22,7 +24,7 @@ function FuncComp(props) {
 
   var [_date, setDate] = useState(new Date().toString());
 
-  console.log("numberState", numberState);
+  console.log("%cfunc => render", funcStyle);
   return (
     <div className="container">
       <h2>function style component</h2>
@@ -46,11 +48,15 @@ function FuncComp(props) {
   );
 }
 
+var classStyle = "color:Red";
 class ClassComp extends React.Component {
   state = {
     number: this.props.initNumber,
     date: new Date().toString(),
   };
+  componentWillMount() {
+    console.log("%cclass => componentWillMount", classStyle);
+  }
   render() {
     return (
       <div className="container">
