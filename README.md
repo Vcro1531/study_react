@@ -1,1 +1,1 @@
-React Class & Function style coding 비교
+React Class, Function style coding 비교
